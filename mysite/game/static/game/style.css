@@ -1,0 +1,35 @@
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	background: #34495E;
+}
+
+#wrapper{
+	background: #34495E;	
+}
+
+#sidemenu{
+	background: #FFB6C1;
+	color: white;
+	height: 100%;
+	padding: 20px 20px 20px 5px;
+}
+
+.page_title{
+	text-align: left;
+}
+
+#page{
+	background: #2980B9;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+	padding: 2px 20px 20px 20px;
+	border: 3px outset #F6DDCC;
+}
+
+#choices{
+	list-style: none
+}

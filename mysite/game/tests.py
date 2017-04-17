@@ -1,5 +1,6 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from .models import Page, Choice
+from django.urls import reverse
 
 # Create your tests here.
 
@@ -54,6 +55,14 @@ class ChoiceMethodTests(TestCase):
 		allChoices = page.choice_set.all()
 		self.assertIs(allChoices[0].choiceHasPage(), True)
 
+class BookViewTests(TestCase):
+	def test_load_pages(self):
+		client = Client()
+		page = Page(content="Exemple page")
+		page.save()
+		page.choice_set.create(text_choice="option 1")
+		response = client.get(reverse('game:book', args=(1,)))
+		self.assertIs(response.status_code, 200)
 
 
-
+		#print(reverse('game:book', args=(page.id,)))

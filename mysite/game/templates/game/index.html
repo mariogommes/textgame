@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ id }}</title>
+	<link rel="stylesheet" href="{% static 'game/style.css' %}">
+	<link rel="stylesheet" href="{% static 'game/bootstrap/css/bootstrap.css' %}">
+</head>
+<body>
+	<div class="container-fluid" id="wrapper">
+		<div class="row">
+			<div class="col-md-2 col-xs-2 col-sm-2">
+				<section id="sidemenu">
+					<div id="skills">Skills</div>
+					<div id="karma">karma</div>
+				</section>
+			</div>
+			<div class="col-md-10 col-xs-10 col-sm-10">
+				<section id="book">
+					<div id="page">
+						{% include "game/book.html" %}
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

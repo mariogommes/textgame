@@ -1,0 +1,9 @@
+<h3 class="page_title">{{ id }}</h3>
+
+<p id="content">{{ page.content }}</p>
+
+<ul id="choices">
+	{% for choice in page.choice_set.all %}
+		<li>{{ choice.text_choice }}</li>
+	{% endfor %}
+</ul>
