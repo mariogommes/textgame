@@ -1,9 +1,19 @@
-<h3 class="page_title">{{ id }}</h3>
+{% load static %}
 
-<p id="content">{{ page.content }}</p>
+<h3 class="page_title">{{ alerta }}</h3>
+
+<p id="content">
+{{ page.content }}
+
+page_id = {{page.id}}
+</p>
 
 <ul id="choices">
 	{% for choice in page.choice_set.all %}
-		<li>{{ choice.text_choice }}</li>
+		proxima pagina: {{ choice.next_page }}
+		<li><button  type="button" class="choice btn btn-primary" data-page-id="{{ choice.next_page }}">{{ choice.text_choice }}</button></li>
 	{% endfor %}
 </ul>
+
+<script src="{% static 'game/js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'game/js/ajaxRequests.js' %}"></script>
