@@ -10,7 +10,7 @@ class ChoiceInline(admin.TabularInline):
 
 class PageAdmin(admin.ModelAdmin):
 	fieldsets = [
-		('Name ', {'fields': ['name']}),
+		('page_id ', {'fields': ['page_id']}),
 		(None, {'fields': ['content']}),
 	]
 	inlines = [ChoiceInline]

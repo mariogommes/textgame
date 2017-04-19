@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Page(models.Model):
-	name = models.CharField(max_length=100, default="")
+	page_id = models.CharField(max_length=20, primary_key=True, null=False)
 	content = models.TextField()
 
 	def pageHasContent(self):
@@ -18,7 +18,7 @@ class Page(models.Model):
 class Choice(models.Model):
 	page = models.ForeignKey(Page, on_delete=models.CASCADE)
 	text_choice = models.CharField(max_length=200)
-	next_page = models.IntegerField(default=0)
+	next_page = models.CharField(max_length=20, default="")
 
 	def choiceHasPage(self):
 		if hasattr(self, 'page'):

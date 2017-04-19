@@ -5,7 +5,7 @@ from .models import Page
 # Create your views here.
 
 def index(request):
-	page = get_object_or_404(Page, pk=3)
+	page = get_object_or_404(Page, pk=1)
 	context = {'page':page}
 	return render(request, 'game/index.html', context)
 
