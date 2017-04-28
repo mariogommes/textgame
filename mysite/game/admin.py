@@ -14,6 +14,7 @@ class PageAdmin(admin.ModelAdmin):
 		(None, {'fields': ['content']}),
 	]
 	inlines = [ChoiceInline]
+	list_display = ('page_id',) 
 
 admin.site.register(Page, PageAdmin)
 admin.site.register(Choice)

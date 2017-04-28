@@ -1,17 +1,23 @@
 {% load static %}
 
-<h3 class="page_title">{{ alerta }}</h3>
+<h3 class="page_title"> Title </h3>
+
+{% if img_code %}
+	{% with img_code as image_static %}
+		<img src="{% static image_static %}" alt="">
+	{% endwith %}
+{% endif %}
 
 <p id="content">
 {{ page.content }}
 
-page_id = {{page.id}}
+<!--page_id = {{page.page_id}}-->
 </p>
 
 <ul id="choices">
 	{% for choice in page.choice_set.all %}
-		proxima pagina: {{ choice.next_page }}
-		<li><button  type="button" class="choice btn btn-primary" data-page-id="{{ choice.next_page }}">{{ choice.text_choice }}</button></li>
+		<!--proxima pagina: {{ choice.next_page }}-->
+		<li><button  type="button" class="choice btn btn-primary" data-page-id="{{ choice.next_page }}" data-karma="{{ choice.karma }}" data-skill="{{ page.active_skill }}" data-conseq="{{ choice.consequence }}">{{ choice.text_choice }}</button></li>
 	{% endfor %}
 </ul>
 

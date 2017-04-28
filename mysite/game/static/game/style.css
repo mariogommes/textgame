@@ -32,3 +32,7 @@ html, body{
 #choices{
 	list-style: none
 }
+
+.choice{
+	margin:5px;
+}

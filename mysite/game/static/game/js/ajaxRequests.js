@@ -8,7 +8,6 @@
 
 	function loadPage(e){
 		page_id = e.target.getAttribute("data-page-id");
-		console.log(page_id);
 
 		$.ajax({
     		type: 'GET',
