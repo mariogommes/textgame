@@ -1,13 +1,13 @@
 (function(){
 
-	choices = document.querySelectorAll(".choice");
+	var choices = document.querySelectorAll(".choice");
 
 	for (var i=0; i < choices.length; ++i) {
 		choices[i].addEventListener('click', loadPage, false);
 	}
 
 	function loadPage(e){
-		page_id = e.target.getAttribute("data-page-id");
+		var page_id = e.target.getAttribute("data-page-id");
 
 		$.ajax({
     		type: 'GET',
